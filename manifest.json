@@ -1,0 +1,35 @@
+{
+    "name": "התוסף למלחמה בגזענות בפייסבוק",
+    "description": "התוסף הלא רשמי של משרד המשפטים למלחמה בגזענות בפייסבוק",
+    "short_name": "התוסף הלא רשמי של משרד המשפטים למלחמה בגזענות בפייסבוק",
+    "homepage_url": "http://www.twitter.com/omriariav",
+    "permissions": [
+        "tabs",
+        "webNavigation",
+        "webRequest",
+        "http://www.facebook.com/*",
+        "https://www.facebook.com/*"
+    ],
+    "options_page" : "options.html",
+    "background": {
+        "scripts": ["background.js", "jquery-1.11.0.js"],
+        "presistene": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://www.facebook.com/*",
+                        "https://www.facebook.com/*"],
+            "css": ["inject.css"],
+            "js": ["content.js"]
+        }
+    ],
+
+    "web_accessible_resources": [
+        "options.html",
+        "injectme.js",
+        "jquery-1.11.0.js"
+    ],
+
+    "version": "1.1",
+    "manifest_version": 2
+}
